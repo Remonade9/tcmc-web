@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\lucas\\\\OneDrive\\\\Documents 1\\\\Home Coding\\\\TCMC Web\" -Depth 2 | Where-Object { $_.Name -notmatch \"node_modules|\\\\.git|\\\\.next|dist|build\" } | Select-Object FullName, PSIsContainer | Format-Table -AutoSize)",
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\lucas\\\\OneDrive\\\\Documents 1\\\\Home Coding\\\\TCMC Web\\\\client\\\\src\" -Recurse | Where-Object { -not $_.PSIsContainer -and $_.Name -notmatch \"node_modules\" } | Select-Object FullName | Format-Table -AutoSize)",
+      "PowerShell($d = \"c:\\\\Users\\\\lucas\\\\OneDrive\\\\Documents 1\\\\Home Coding\\\\TCMC Web\"; Get-ChildItem \"$d\\\\.claude\\\\skills\" -Recurse -Filter \"SKILL.md\" -ErrorAction SilentlyContinue | ForEach-Object { Select-String -Path $_.FullName -Pattern \"^description:\" -List | Select-Object -First 1 })",
+      "PowerShell(Start-Process -FilePath \"pnpm\" -ArgumentList \"dev\" -WorkingDirectory \"c:\\\\Users\\\\lucas\\\\OneDrive\\\\Documents 1\\\\Home Coding\\\\TCMC Web\" -WindowStyle Hidden -PassThru)",
+      "PowerShell(\\(Get-Command pnpm -ErrorAction SilentlyContinue\\).Source; \\(Get-Command npm -ErrorAction SilentlyContinue\\).Source; \\(Get-Command node -ErrorAction SilentlyContinue\\).Source)",
+      "PowerShell($env:PATH -split \";\" | Where-Object { $_ -ne \"\" })",
+      "PowerShell(Get-ChildItem \"$env:APPDATA\" -ErrorAction SilentlyContinue | Select-Object Name; Get-ChildItem \"$env:LOCALAPPDATA\" -ErrorAction SilentlyContinue | Where-Object { $_.Name -match \"nvm|node|volta|fnm\" } | Select-Object Name, FullName)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\lucas\\\\AppData\\\\Local\" | Where-Object { $_.Name -match \"nvm|node|volta|fnm|pnpm\" } | Select-Object Name, FullName)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\lucas\\\\AppData\\\\Roaming\" | Where-Object { $_.Name -match \"nvm|node|npm|pnpm|volta\" } | Select-Object Name, FullName)",
+      "PowerShell(cmd /c \"where node 2>nul & where pnpm 2>nul\")",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}
