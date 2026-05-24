@@ -85,7 +85,7 @@ export default function Footer() {
 
         <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-gray-500 text-xs">
-            © 2024–2025 Tyee Competition Math Club · Tyee Middle School · Bellevue School District
+            © 2024 - 2026 Tyee Competition Math Club · Tyee Middle School · Bellevue School District
           </p>
           <p className="text-gray-600 text-xs font-mono-accent">AMC 8 · MATHCOUNTS</p>
         </div>
